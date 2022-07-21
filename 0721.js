@@ -57,10 +57,10 @@ let binarySearch = function (nums, target) {
     let start = 0; // create two pointer
     let end = nums.length - 1;
     while (start <= end) {
-        let middle = Math.floor((start+end)/2)
+        let middle = Math.floor((start+end)/2) //find middle
         if (nums[middle] === target) {
             return middle;
-        } else if (nums[middle] < target) {
+        } else if (nums[middle] < target) { //move pointer if needed
             start += 1
         } else {
             end -= 1
