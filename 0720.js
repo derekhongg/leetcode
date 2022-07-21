@@ -57,3 +57,5 @@ function reverseLinkedList (head) {
     }
     return prev; // previous becomes the last node or new head;
 }
+
+// Space complexity: O(n), no new infomation was added, will iterate through the information we have;
