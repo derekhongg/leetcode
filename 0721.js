@@ -49,7 +49,7 @@ let reverseString2 = function(s) {
 
 // Space complexity O(n): iterate through the dataset only once 
 
-console.log(reverseString2(newString));
+//console.log(reverseString2(newString));
 
 // 3. Binary Search
 
@@ -70,3 +70,29 @@ let binarySearch = function (nums, target) {
 }
 
 //Space complexity O(logn): a search algorithm, logarithmic runtime 
+
+// 4. Merge Sorted Array
+// Two pointer
+
+let arr1 = [1,2,3,0,0,0]
+let arr2 = [2,5,6]
+
+let merge = function (nums1, m, nums2, n) {
+    let first = m - 1; 
+    let second = n - 1;
+    let i = m + n - 1; // i will be set at the end of the first array
+    while(second >= 0) { // we want the loop to run as long as the second array exists
+        let firstVal = nums1[first];
+        let secondVal = nums2[second];
+        if(firstVal > secondVal) { // this will sort the first array 
+            nums1[i] = firstVal;
+            i--;
+            first--;
+        } else { // this will sort the second array  if it is greater than the value in nums1
+            nums1[i] = secondVal;
+            i--;
+            second--;
+        }
+    }
+} 
+// Runtime is O(n) but space complexity is O(1) since no new variables are being made
