@@ -32,3 +32,21 @@ var countConsistent = function(allowed, words) {
     }
         
 };
+
+// 2. Reverse String
+let newString = ["h","e","l","l","o"]
+
+let reverseString2 = function(s) {
+    let left = 0;
+    let right = s.length - 1;
+    while(left <= right) {
+        [s[left], s[right]] = [s[right], s[left]];
+        left++;
+        right--;
+    }
+    return s
+}
+
+// Space complexity O(n): iterate through the dataset only once 
+
+console.log(reverseString2(newString));
