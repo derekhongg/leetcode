@@ -50,3 +50,23 @@ let reverseString2 = function(s) {
 // Space complexity O(n): iterate through the dataset only once 
 
 console.log(reverseString2(newString));
+
+// 3. Binary Search
+
+let binarySearch = function (nums, target) {
+    let start = 0; // create two pointer
+    let end = nums.length - 1;
+    while (start <= end) {
+        let middle = Math.floor((start+end)/2)
+        if (nums[middle] === target) {
+            return middle;
+        } else if (nums[middle] < target) {
+            start += 1
+        } else {
+            end -= 1
+        }
+    }
+    return -1;
+}
+
+//Space complexity O(logn): a search algorithm, logarithmic runtime 
