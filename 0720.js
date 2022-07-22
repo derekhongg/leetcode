@@ -22,16 +22,17 @@ console.log(mySet.size);
 // 1. Unique Email Addresses
 
 var numUniqueEmails = function(emails) {
-    const set = new Set();
+    const set = new Set(); // Using set because they can only hold unique values
 
     for(e of emails) {
-        const arr = e.split("@");
+        const arr = e.split("@"); // split the local and domain values
         console.log(arr, "checkpoint0")
         arr[0] = (arr[0].split("+"))[0];
-        console.log((arr[0].split("+"))[0], "checkpoint1");
-        arr[0] = arr[0].replace(/\./g, "");
+        arr[0] = arr[0].replace(/\./g, ""); // replace all the dots globally
+        console.log(arr[0]);
         set.add(arr.join("@"));
     }
+    console.log(set)
     return set.size;
 };
 

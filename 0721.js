@@ -37,17 +37,17 @@ var countConsistent = function(allowed, words) {
 let newString = ["h","e","l","l","o"]
 
 let reverseString2 = function(s) {
-    let left = 0;
-    let right = s.length - 1;
-    while(left <= right) {
-        [s[left], s[right]] = [s[right], s[left]];
-        left++;
-        right--;
+    let left = 0; // create two pointers
+    let right = s.length - 1; // one for start and end
+    while(left <= right) { // run a while loop because we don't know when this string will end
+        [s[left], s[right]] = [s[right], s[left]]; //flip the two values from the two pointers;
+        left++; // increase the beginning as we go forward
+        right--; // decrease the second pointer as we move forward
     }
-    return s
+    return s // return the string at the end
 }
 
-// Space complexity O(n): iterate through the dataset only once 
+// Time Complexity: O(n) Space complexity: O(1)
 
 //console.log(reverseString2(newString));
 
