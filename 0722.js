@@ -29,3 +29,16 @@ let arr1 = [-4,-1,0,3,10]
 console.log(sortedSquares(arr1))
 
 //Time complexity (O(logn)) - search algorithm Space Complexity = O(n) because we're creating a new data;
+
+let nums = [1,2,3,4];
+
+function runningSum(nums) {
+    let arr = new Array(nums.length) // creating new array to put new values in
+    arr[0] = nums[0]; // The first values of the two arrays will always be the same and reamain the same
+    for(let i = 1; i < nums.length; i++) { // start the index at 1 because index 0 will not need to be touched
+        arr[i] = arr[i-1] + nums[i]; // the new value will be the previous value plus the value at the current index
+    }
+    return arr;
+}
+
+console.log(runningSum(nums));
