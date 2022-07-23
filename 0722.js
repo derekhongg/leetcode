@@ -26,7 +26,7 @@ var sortedSquares = function(nums) {
 
 let arr1 = [-4,-1,0,3,10]
 
-console.log(sortedSquares(arr1))
+// console.log(sortedSquares(arr1))
 
 //Time complexity (O(logn)) - search algorithm Space Complexity = O(n) because we're creating a new data;
 
@@ -41,4 +41,28 @@ function runningSum(nums) {
     return arr;
 }
 
-console.log(runningSum(nums));
+//Time Complexity O(logN) - we're creating a new array here Space complexity = O(n) new array is created and passed through
+
+// console.log(runningSum(nums));
+
+// Find Pivot Index
+
+//LeftIndex = 0 - will count the amount of numbers we've seen so far
+function pivotIndex(arr) {
+    let totalSum = 0;
+    let leftSum = 0;
+    arr.forEach((e) => {
+        totalSum += e
+    })
+    for(let i = 0; i < arr.length; i++) {
+        if(totalSum - leftSum - arr[i] === leftSum) {
+            return i
+        }
+        leftSum += arr[i]
+    }
+    return -1;
+};
+
+let nums1 = [1,7,3,6,5,6] // sum of this is 28
+// total sum
+console.log(pivotIndex(nums1))
