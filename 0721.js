@@ -96,3 +96,4 @@ let merge = function (nums1, m, nums2, n) {
     }
 } 
 // Runtime is O(n) but space complexity is O(1) since no new variables are being made
+

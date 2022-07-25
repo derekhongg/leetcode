@@ -114,3 +114,34 @@ function findInsertIndex(arr, target) {
 function doesArrContainDuplicate(arr) {
     return new Set(arr).size < arr.length;
 }
+
+// 7. Get intersection of Linked List
+// continue to move headA and headB until they intersect with two pointers
+// while the pointers don't equal one another, we want to move the pointers to the next node until they intersect
+// when the pointers intersect we can return either of the pointers;
+// if the pointers are null, then we can just return of of the nodes
+// i can return either pointer 1 or pointer two at the end
+
+
+var getIntersectionNode = function(headA, headB) {
+    if(headA === null || headB === null) {
+        return null;
+    }
+    let pointer1 = headA;
+    let pointer2 = headB;
+    
+    while(pointer1 !== pointer2) {
+        pointer1=pointer1.next;
+        pointer2=pointer2.next;
+        if(pointer1 === pointer2) {
+        return pointer1
+    }
+    if(pointer1 === null) {
+        pointer1 = headB;
+    }
+    if(pointer2 === null) {
+        pointer2 = headA
+        }
+    }
+    return pointer1;
+};
