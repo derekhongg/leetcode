@@ -83,3 +83,26 @@ function reverseString(s) {
 }
 
 // 5. Insert Position 
+// find index of where value needs to be inserted in a sorted array 
+// Questions: 1. Will this array always be sorted 2. Are negative numbers possible in the array 3. Will they always be integers
+//4. Will min max values play a role in this? 5. Will there always be a return value
+
+// will create start and end pointers to adjust as we loop through the entire array
+// create a middle pointer as the return value and will adjust as we loop through the indexes
+// return start at the end if no conditionals are met
+
+function findInsertIndex(arr, target) {
+    let start = 0;
+    let end = arr.length - 1;
+    while(start <= end) {
+        let middle = Math.floor((start+end)/2);
+        if(nums[middle] === target) {
+            return middle;
+        } else if (nums[middle] < target) {
+            start++
+        } else if(nums[middle] > target) {
+            end--
+        }
+    }
+    return start;
+}
