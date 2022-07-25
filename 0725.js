@@ -106,3 +106,11 @@ function findInsertIndex(arr, target) {
     }
     return start;
 }
+
+// 6. Contains Duplicates
+// create new set since it only contains unique values and compare it to the arr size
+// if the set size < arr size, returns true, otherwise it will return false
+
+function doesArrContainDuplicate(arr) {
+    return new Set(arr).size < arr.length;
+}
