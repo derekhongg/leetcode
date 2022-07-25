@@ -62,7 +62,16 @@ function pivotIndex(arr) {
     }
     return -1;
 };
-
+// can use reduce function to get total sum
 let nums1 = [1,7,3,6,5,6] // sum of this is 28
 // total sum
 console.log(pivotIndex(nums1))
+
+// Reduce function example
+
+const num = [1, 2, 4, 5];
+const sum = num.reduce((a, b) => {
+    return a + b;
+}, 0);
+
+console.log(sum);
