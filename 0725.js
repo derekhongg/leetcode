@@ -123,25 +123,25 @@ function doesArrContainDuplicate(arr) {
 // i can return either pointer 1 or pointer two at the end
 
 
-var getIntersectionNode = function(headA, headB) {
-    if(headA === null || headB === null) {
+let getIntersectionNode = function(headA, headB) {
+    if(headA === null || headB === null) { // if either of the heads are null then we will just return null
         return null;
     }
-    let pointer1 = headA;
-    let pointer2 = headB;
+    let pointer1 = headA; // set first pointer at first Linked List
+    let pointer2 = headB; // set second pointer at the second head;
     
-    while(pointer1 !== pointer2) {
-        pointer1=pointer1.next;
-        pointer2=pointer2.next;
-        if(pointer1 === pointer2) {
+    while(pointer1 !== pointer2) { // while pointer1 and pointer2 don't equal one another
+        pointer1=pointer1.next; // we keep pushing the pointer1
+        pointer2=pointer2.next; // we will keep pushing pointer2
+        if(pointer1 === pointer2) { // if pointer1 and pointer2 intersect, we can return one of the pointers 
         return pointer1
-    }
-    if(pointer1 === null) {
-        pointer1 = headB;
-    }
-    if(pointer2 === null) {
+        };
+        if(pointer1 === null) {
+        pointer1 = headB; // if pointer one reaches an end, we can push it to the second Linked List
+        };
+        if(pointer2 === null) { // if pointer two reaches an end, we can move it to the first linked list and continue;
         pointer2 = headA
-        }
+        };
     }
-    return pointer1;
+    return pointer1; // we can return either pointer 
 };
