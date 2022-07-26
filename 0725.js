@@ -19,11 +19,11 @@ function isPalidromeNumber(x) {
 // create prev variable and set it to dummy and we will adjust it as we go
 //Other possible solutions - Recursion 
 
-function mergeTwoSortedLinkedLists (list1, list2) {
+function mergeTwoSortedLinkedLists(list1, list2) {
     const dummy = new ListNode();
-    let prev = dummy; 
-    while(list1 !== null && list2 !== null) { // run the while loop while list1 and list2 exist
-        if(list1.val <= list2.val) { // if we have list1 less than list2 
+    let prev = dummy;
+    while (list1 !== null && list2 !== null) { // run the while loop while list1 and list2 exist
+        if (list1.val <= list2.val) { // if we have list1 less than list2 
             prev.next = list1; //we want to move the previous pointer to list1
             prev = list1; // set the pointer to list1
             list1 = list1.next; // then increment list1 by 1
@@ -33,10 +33,10 @@ function mergeTwoSortedLinkedLists (list1, list2) {
             list2 = list2.next
         }
     }
-    if(!list1) {
+    if (!list1) {
         prev.next = list2;
     }
-    if(!list2) {
+    if (!list2) {
         prev.next = list1;
     }
     return dummy.next
@@ -54,7 +54,7 @@ function mergeTwoSortedLinkedLists (list1, list2) {
 
 function reverseLinkedList(head) {
     let prev = null; // set prev pointer to move
-    while(head !== null) { // run a while loop while head exists
+    while (head !== null) { // run a while loop while head exists
         let temp = head.next; // create temp and set to head.next
         head.next = prev; // set head.next to prev - null
         prev = head; // move prev = head;
@@ -74,7 +74,7 @@ function reverseLinkedList(head) {
 function reverseString(s) {
     let start = 0; // create the pointer for start and end 
     let end = s.length - 1; // this pointer will be at the end of the array
-    while(start <= end) { // run the while loop through the entire array
+    while (start <= end) { // run the while loop through the entire array
         [s[start], s[end]] = [s[end], s[start]] // swap the positions of each character in the position 
         start++; // increment start to move the pointer right
         end--; // decrement end to move the pointer left
@@ -94,13 +94,13 @@ function reverseString(s) {
 function findInsertIndex(arr, target) {
     let start = 0;
     let end = arr.length - 1;
-    while(start <= end) {
-        let middle = Math.floor((start+end)/2);
-        if(nums[middle] === target) {
+    while (start <= end) {
+        let middle = Math.floor((start + end) / 2);
+        if (nums[middle] === target) {
             return middle;
         } else if (nums[middle] < target) {
             start++
-        } else if(nums[middle] > target) {
+        } else if (nums[middle] > target) {
             end--
         }
     }
@@ -123,25 +123,52 @@ function doesArrContainDuplicate(arr) {
 // i can return either pointer 1 or pointer two at the end
 
 
-let getIntersectionNode = function(headA, headB) {
-    if(headA === null || headB === null) { // if either of the heads are null then we will just return null
+let getIntersectionNode = function (headA, headB) {
+    if (headA === null || headB === null) { // if either of the heads are null then we will just return null
         return null;
     }
     let pointer1 = headA; // set first pointer at first Linked List
     let pointer2 = headB; // set second pointer at the second head;
-    
-    while(pointer1 !== pointer2) { // while pointer1 and pointer2 don't equal one another
-        pointer1=pointer1.next; // we keep pushing the pointer1
-        pointer2=pointer2.next; // we will keep pushing pointer2
-        if(pointer1 === pointer2) { // if pointer1 and pointer2 intersect, we can return one of the pointers 
-        return pointer1
+
+    while (pointer1 !== pointer2) { // while pointer1 and pointer2 don't equal one another
+        pointer1 = pointer1.next; // we keep pushing the pointer1
+        pointer2 = pointer2.next; // we will keep pushing pointer2
+        if (pointer1 === pointer2) { // if pointer1 and pointer2 intersect, we can return one of the pointers 
+            return pointer1
         };
-        if(pointer1 === null) {
-        pointer1 = headB; // if pointer one reaches an end, we can push it to the second Linked List
+        if (pointer1 === null) {
+            pointer1 = headB; // if pointer one reaches an end, we can push it to the second Linked List
         };
-        if(pointer2 === null) { // if pointer two reaches an end, we can move it to the first linked list and continue;
-        pointer2 = headA
+        if (pointer2 === null) { // if pointer two reaches an end, we can move it to the first linked list and continue;
+            pointer2 = headA
         };
     }
     return pointer1; // we can return either pointer 
 };
+
+//8. TwoSum
+// run loops to iterate through the array twice, return indexes from first and second loop to give answer
+// second loop will start 1 spot ahead of where first loop starts
+
+function twoSum(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+        for(let j = i + 1; j < arr.length; j++) {
+            if(arr[i] + arr[j] === target) {
+                return [i, j];
+            }
+        }
+    }
+}
+//create hashmap to store values
+// create complement variable to store values and check if we've seen that key-value pair
+function twoSum2(arr, target) {
+    let hashMap = {};
+    for(let i = 0; i < arr.length; i++) { // this will loop through the entire array once
+        let complementValue = target - arr[i];
+        if(hashMap[complementValue] !== undefined) {
+            return [hashMap[arr], i];
+        } else {
+            hashMap[arr[i]] = i;
+        }
+    }
+}
