@@ -168,7 +168,7 @@ function twoSum2(arr, target) {
         if(hashMap[complementValue] !== undefined) {
             return [hashMap[arr], i];
         } else {
-            hashMap[arr[i]] = i;
+            hashMap[arr[i]] = i
         }
     }
 }
