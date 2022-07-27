@@ -124,5 +124,13 @@ function reverseString(str) {
 
 
 // use recursion to swap positions
-
+function reverseString2(str) {
+    function reverse(start, end) {
+        if(start < end) {
+            [str[start], str[end]] = [str[end], str[start]];
+            return reverse(start + 1, end - 1)
+        }
+    }
+    reverse(0, str.length - 1)
+}
 
