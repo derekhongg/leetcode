@@ -108,3 +108,21 @@ function fib3(num) {
 }
 
 console.log(fib3(5))
+
+//5. Reverse String - Multiple solutions
+// swap positions with pointers
+function reverseString(str) {
+    let start = 0;
+    let end = str.length-1;
+    while(start < end) {
+        [str[start], str[end]] = [str[start], str[end]];
+        start++;
+        end--;
+    }
+    return str
+}
+
+
+// use recursion to swap positions
+
+
