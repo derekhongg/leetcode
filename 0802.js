@@ -145,3 +145,35 @@ setB.add("a");
 setB.add("d");
 console.log(setA.subset(setB));
 console.log(setA.intersection(setB).values());
+
+/* Queues
+Imagine standing in line
+First in Last Out - Can use Queue using an array
+*/
+
+function Queue() {
+    let collection = [];
+    this.print = function() {
+        console.log(collection);
+    }
+    // Adds to a queue
+    this.enqueue = function(element) {
+        collection.push(element);
+    }
+    // removes from a queue
+    this.dequeue = function() {
+        return collection.shift();
+    }
+    // return the front of the queue
+    this.front = function() {
+        return collection[0];
+    }
+    //return the size of the queue
+    this.size = function() {
+        return collection.length
+    }
+    // check if queue is empty
+    this.isEmpty = function() {
+        return (collection.length === 0);
+    };
+}
