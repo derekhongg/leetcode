@@ -22,3 +22,29 @@ let isIsomorphic = function (s, t) {
     }
     return true;
 }
+
+/*
+Is Subsequence
+- Given two strings, s & t, return true if s is a subsequence of t
+- return false otherwhise
+
+s = "abc"
+t = "ahbgdc" output: true
+
+s = "axc" t= "ahbgdc" output = false
+
+*/
+
+function isSubsequence(s, t) {
+    let pointer1 = 0;
+    let pointer2 = 0;
+    while(pointer1 < s.length && pointer2 < t.length) {
+        if(s[p1] === t[p2]) {
+            pointer1++
+            pointer2++
+        } else {
+            pointer2++
+        }
+    }
+    return pointer1 === s.length
+}
