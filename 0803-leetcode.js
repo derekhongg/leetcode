@@ -48,3 +48,9 @@ function isSubsequence(s, t) {
     }
     return pointer1 === s.length
 }
+
+/* Longest Palindrome
+Given a string that consists of lowercase or uppercase letters. Find the length of the longest palindromes that can be build with those letters
+Aa - would be considered a palindrome
+
+*/
