@@ -50,3 +50,10 @@ function backspaceCompare(s, t) {
     }
     return s === t; // compare s and t
 }
+
+/* Decode String
+
+Example: s = "3[a]2[bc]" output = "aaabcbc"
+Input: s = "3[a2[c]]" Output: "accaccacc"
+
+*/
