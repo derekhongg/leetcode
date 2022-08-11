@@ -35,8 +35,6 @@ Can use stack
 */
 
 function backspaceCompare(s, t) {
-    s = parse(s);
-    t = parse(t); // run the function for both s and t
     function parse(string) { // create helper function to break strings apart
         let stack = []; // create empty stack to add elements into
         for (let i = 0; i < string.length; i++) { // loop through the entire array
@@ -48,8 +46,10 @@ function backspaceCompare(s, t) {
         }
         return stack.join("") // join the stacks together after loop is done
     }
-    return s === t; // compare s and t
+    return parse(s) === parse(t); // compare s and t
 }
+
+// Time Complexity: O(N + M)    Space Complexity: O(n)
 
 /* Decode String
 
