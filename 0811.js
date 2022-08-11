@@ -23,3 +23,30 @@ function maxArea(height) {
     return areaOfContainer;
 }
 // O(1) - Because we create no new variables, O(n) - because we only loop through it once
+
+/* Backspace String Compare
+
+Example: "ab#c" - "ad#c" - return true because they both become "ac";
+"ab##" - "c#d#" return true because they both become empty
+"a#c" - "b" return false
+
+Can use stack
+
+*/
+
+function backspaceCompare(s, t) {
+    s = parse(s);
+    t = parse(t); // run the function for both s and t
+    function parse(string) { // create helper function to break strings apart
+        let stack = []; // create empty stack to add elements into
+        for (let i = 0; i < string.length; i++) { // loop through the entire array
+            if(string[i] == "#") { // if certain element is equal to # we get rid of it
+                stack.pop()
+            } else {
+                stack.push(string[i]); // otherwise we add to the stack
+            }
+        }
+        return stack.join("") // join the stacks together after loop is done
+    }
+    return s === t; // compare s and t
+}
