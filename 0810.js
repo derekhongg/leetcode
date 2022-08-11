@@ -7,8 +7,8 @@ Fast and slow pointer
 function getNumSum(n) {
     let total = 0;
     while(n !== 0) {
-        let getLastDigit = n % 10;
-        n = Math.floor(n/10);
+        let getLastDigit = n % 10; // this will get the last digit
+        n = Math.floor(n/10); //this will remove the last digit
         total += Math.pow(getLastDigit, 2)
     }
     return total;
