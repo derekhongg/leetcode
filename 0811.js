@@ -50,10 +50,3 @@ function backspaceCompare(s, t) {
 }
 
 // Time Complexity: O(N + M)    Space Complexity: O(n)
-
-/* Decode String
-
-Example: s = "3[a]2[bc]" output = "aaabcbc"
-Input: s = "3[a2[c]]" Output: "accaccacc"
-
-*/

@@ -32,3 +32,5 @@ function decodeString(s) {
     }
     return solution;
 }
+
+// Time complexity: O(n)  Space Complexity: O(n)
