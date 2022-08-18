@@ -7,7 +7,7 @@
 
 function longestPalindrome (s) {
     const set = new Set();
-    let count = 0; // this will be returned at the end
+    let count = 0; // this will be returned at the endx
 
     for(let i = 0; i < s.length; i++) {
         if(set.has(s[i])) { // if set has character
