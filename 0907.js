@@ -11,11 +11,10 @@ const arr = [
 // as it loops through each array and string, increment the counter by 1
 
 function letterCounter(s) {
+    let oneD = s.flat()
     let count = 0;
-    for(let i = 0; i < s.length; i++) {
-        for(let j = 0; j < s[i].length; j++) {
-            count++
-        }
+    for(let i = 0; i < oneD.length; i++) {
+        count+=oneD[i].length
     }
     return count
 }
