@@ -24,3 +24,37 @@ function reverseString(str){
 let s = ["h","e","l","l","o"];
 
 console.log(reverseString(s));
+
+/* Binary Search
+
+- Create two pointers
+- Run while loop 
+- Create middle pointer in the loop
+- Adjust pointer if target is not reached
+- Return middle at the end
+- Return -1 if target is not met
+
+Time Complexity: O(log n) - Using Binary Search
+Space Complexity: O(N) - No data structures created
+*/
+
+function binarySearch(nums, target) {
+    let start = 0;
+    let end = nums.length - 1;
+
+    while(start <= end) {
+        let middle = Math.floor((start+end)/2);
+        if(nums[middle] === target) {
+            return middle;
+        } else if(nums[middle] < target){
+            start++
+        } else if (nums[middle] > target) {
+            end--
+        }
+    }
+    return -1
+}
+
+let arrOfNums = [1, 3, 5, 2, 6];
+
+console.log(binarySearch(arrOfNums, 7));
