@@ -53,3 +53,32 @@ function twoSum2(nums, target) {
 let arr1 =  [1, 2, 3, 4, 5];
 
 console.log(twoSum2(arr1, 7));
+
+/* Isomorphic Strings
+
+-Create two objects for the parameters
+-Check if the two parameters are equal in length
+-Loop through one of the parameters
+-Check if the objects match
+
+
+*/
+
+function isIsomorphic(s, t) {
+    let obj1 = {};
+    let obj2 = {};
+    if(s.length !== t.length) {
+        return false;
+    }
+    for(let i = 0; i < t.length; i++) {
+        if(obj1[s[i]] !== obj2[t[i]]) {
+            return false;
+        } else {
+            obj1[s[i]] = i;
+            obj2[t[i]] = i;
+        }
+    }
+    return true;
+}
+
+console.log(isIsomorphic("dff", "egg"));
