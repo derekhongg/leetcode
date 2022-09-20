@@ -58,3 +58,29 @@ function binarySearch(nums, target) {
 let arrOfNums = [1, 3, 5, 2, 6];
 
 console.log(binarySearch(arrOfNums, 7));
+
+/* Move Zeroes to the end
+
+- Set pointer
+- Loop through the entire array
+- Set conditional if number at a given index is not zero, we will swap the value at that certain index with nums[i]
+- increment after value has been changed
+
+- run loop again and change the values at the end of the for loop so the number at the lastNonZeroIndex and make them equal to zero
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+*/
+
+function moveZeroes(nums) {
+    let lastNonZeroIndex = 0;
+    for(let i = 0; i < nums.length; i++) {
+        if(nums[i] !== 0) {
+            nums[lastNonZeroIndex] = nums[i];
+            lastNonZeroIndex++
+        }
+    }
+    for(let i = lastNonZeroIndex; i < nums.length; i++) {
+        nums[i] = 0;
+    }
+}
