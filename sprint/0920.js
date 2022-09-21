@@ -61,7 +61,8 @@ console.log(twoSum2(arr1, 7));
 -Loop through one of the parameters
 -Check if the objects match
 
-
+Time Complexity: O(n) - only loop thorugh once
+Space Complexity: O(n) - create new data structures
 */
 
 function isIsomorphic(s, t) {
@@ -70,7 +71,7 @@ function isIsomorphic(s, t) {
     if(s.length !== t.length) {
         return false;
     }
-    for(let i = 0; i < t.length; i++) {
+    for(let i = 0; i < s.length; i++) {
         if(obj1[s[i]] !== obj2[t[i]]) {
             return false;
         } else {
@@ -82,3 +83,27 @@ function isIsomorphic(s, t) {
 }
 
 console.log(isIsomorphic("dff", "egg"));
+
+/* Reverse Linked List
+
+- Set pointers for current, next and previous
+- set previous pointer to equal null
+- break the links between each node and push current and next once link is broken
+- return previous afterwards
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+*/
+
+function reverseLinkedList(head) {
+    let prev = null;
+
+    while(head !== null) {
+        let next = head.next;
+        head.next = prev;
+        prev = head;
+        head = next;
+    }
+    return prev;
+}
