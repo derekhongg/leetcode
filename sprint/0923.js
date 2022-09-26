@@ -4,6 +4,9 @@
 - iterate thorugh set
 - create two variables to track the max and the current number the loop is on
 
+
+Time Complexity:O(2n) -> O(n)
+Space Complexity:O(n)
 */
 
 function longestConsecutive(nums) {
