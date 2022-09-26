@@ -37,7 +37,29 @@ function isPalindrome(n) {
     return n === reversedNum;
 }
 
-console.log(isPalindrome(121))
+function twoSum2(nums, target) {
+    let solutions = [];
+    let hashmap = {};
+    for(let i = 0; i < nums.length; i++) {
+        let complementValue = target - nums[i];
+        if(hashmap[complementValue] !== undefined) {
+            solutions.push([hashmap[complementValue], i]);
+        } else {
+            hashmap[nums[i]] = i;
+        }
+    }
+    return solutions;
+}
 
-console.log(Math.floor(1.2))
-console.log(1%10)
+function reverseString(arr) {
+    let start = 0;
+    let end = arr.length - 1;
+    while(start <= end){
+        [arr[start], arr[end]] = [arr[end], arr[start]]
+        start++;
+        end--;
+    }
+    return arr;
+}
+
+console.log(reverseString(['h', 'e', 'l', 'l', 'o']))
