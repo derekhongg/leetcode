@@ -62,4 +62,11 @@ function reverseString(arr) {
     return arr;
 }
 
-console.log(reverseString(['h', 'e', 'l', 'l', 'o']))
+console.log(reverseString(['h', 'e', 'l', 'l', 'o']));
+
+/* Merge Two Sorted Linked List
+
+Time Complexity:
+Space Complexity: 
+
+*/
