@@ -38,7 +38,12 @@ Ex: [1, 2, 3, 4] Target = 3 | Return [1, 2, 4]
 */
 
 
-/* Isomorphic String - Review*/
+/* Isomorphic String - Review
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+*/
 
 function isIsomorphic(s, t) {
     if(s.length !== t.length) {
