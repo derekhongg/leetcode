@@ -14,7 +14,7 @@ function reverseString(str) {
     return strSplit.join('')
 }
 
-console.log(reverseString("derek"))
+console.log(reverseString("derek hong"))
 
 
 /* Single Number
@@ -35,8 +35,8 @@ function singleNumber(nums) {
         }
     }
     for(let j of set) {
-        return j;
+        return [...set];
     }
 }
 
-console.log(singleNumber([1,2,1,2,4]))
+console.log(singleNumber([1,2,1,2,4,5,6]))
