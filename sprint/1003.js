@@ -11,5 +11,24 @@ function fib(num) {
     return fib[fib.length-1]
 }
 
-console.log(fib(6))
+
+
+function fib2(num) {
+    if (num < 2) {
+        return num;
+    }
+    return fib(num-1) + fib(num-2)
+}
+
+console.log(fib2(6))
+
+function removeElement(nums, val) {
+    for(let i = 0; i < nums.length; i++) {
+        if(nums[i] === val) {
+            nums.splice(i, 1);
+            i--
+        }
+    }
+    return nums.length;
+}
 
