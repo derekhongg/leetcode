@@ -20,15 +20,50 @@ function fib2(num) {
     return fib(num-1) + fib(num-2)
 }
 
-console.log(fib2(6))
+// console.log(fib2(6))
 
 function removeElement(nums, val) {
-    for(let i = 0; i < nums.length; i++) {
-        if(nums[i] === val) {
-            nums.splice(i, 1);
-            i--
+    let start = 0;
+    let end = nums.length - 1;
+    while(start <= end) {
+        if(nums[start] === val) {
+            nums[start] = nums[end]
+            end--
+        } else {
+            start++
         }
     }
-    return nums.length;
+    return start;
 }
 
+/* Palindrome String
+
+-Example: "hannah"
+
+*/
+
+function palindromeString(str) {
+    let reversedStr = "";
+    for(let i of str) {
+        reversedStr = reversedStr + i
+    }
+    return str === reversedStr
+}
+
+// console.log(palindromeString('hannah'))
+
+function kidsWithCandies(candies, extraCandies) {
+    let max = Math.max(...candies)
+    for(let i = 0; i < candies.length; i++) {
+        if(candies[i] + extraCandies >= max) {
+            candies[i] = true;
+        } else {
+            candies[i] = false;
+        }
+    }
+    return candies
+}
+
+let arr1 = [2,3,5,1,3]
+
+console.log(kidsWithCandies(arr1, 3))
