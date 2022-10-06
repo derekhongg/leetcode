@@ -67,3 +67,16 @@ function kidsWithCandies(candies, extraCandies) {
 let arr1 = [2,3,5,1,3]
 
 console.log(kidsWithCandies(arr1, 3))
+
+function mergeTwoTrees(t1, t2) {
+    if(!t1) {
+        return t2
+    }
+    if(!t2) {
+        return t1;
+    }
+    t1.val += t2.val;
+    t1.left = mergeTwoTrees(t1.left, t2.left);
+    t1.right = mergeTwoTrees(t1.right, t2.right);
+    return t1;
+}
