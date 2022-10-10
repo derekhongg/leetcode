@@ -55,3 +55,96 @@ function insertPosition(nums, target) {
     }
     return start;
 }
+
+
+/* Roman to Int
+
+Set up hashmap for roman to int values
+set up variable for total then continue adding or subtracting depending on value
+
+*/
+
+function romanToInt(s) {
+    let romanMap = {
+        'I': 1,
+        'V': 5, 
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+
+    let result = 0;
+    for(let i = 0; i < s.length; i++) {
+        if(romanMap[s[i]] < romanMap[s[i+1]]) {
+            result -= romanMap[s[i]];
+        } else {
+            result += romanMap[s[i]];
+        }
+    }
+    return result;
+}
+
+let arr2 = [1,2,3,4,5]
+
+for(let i = 0; i < arr2.length; i++) {
+    if(arr2[i] === 3) {
+        arr2.splice(i, 1)
+    }
+}
+
+console.log(arr2)
+
+function reverseWords(s) {
+    let sSplit = s.split(" ");
+    let start = 0;
+    let end = sSplit.length - 1;
+    for(let i = 0; i < sSplit.length; i++) {
+        if(sSplit[i] === '') {
+            sSplit.splice(i, 1);
+        }
+    }
+    console.log(sSplit)
+    while(start<=end){
+        [sSplit[start], sSplit[end]] = [sSplit[end], sSplit[start]];
+        start++
+        end--
+    }
+    return sSplit.join(" ")
+}
+
+
+
+
+function reverseWords2(s) {
+    let strSplit = s.split(' ');
+    let reversedStr = '';
+
+    for(let i = strSplit.length - 1; i >= 0; i--) {
+        if(strSplit[i] !== '') {
+            if(reversedStr.length > 0) {
+                reversedStr += ' ';
+            }
+            reversedStr += strSplit[i];
+        }
+    }
+    return reversedStr
+}
+
+var addDigits = function(num) {
+    let n = num;
+    while(n >= 10) {
+        let total = 0;
+        while(n > 0) {
+            total = total + (n%10);
+            n = Math.floor(n/10)
+        }
+        n = total
+    }
+    return n;
+};
+
+console.log(addDigits(38))
+
+
