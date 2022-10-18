@@ -145,6 +145,31 @@ var addDigits = function(num) {
     return n;
 };
 
-console.log(addDigits(38))
+// console.log(addDigits(38))
 
+
+function palindromeNum(x) {
+    if (x < 0) {
+        return false
+    }
+
+    let reversedNum = 0
+    let temp = x;
+
+    while(temp > 0) {
+        let digit = temp%10;
+        reversedNum = (reversedNum*10) + digit;
+        temp = Math.floor(temp/10);
+    }
+    return reversedNum === x;
+}
+
+function moveZeros(nums) {
+    let nonZeroIndex = 0;
+    for(let i = 0; i < nums.length; i++){
+        [nums[nonZeroIndex], nums[i]] = [nums[i], nums[nonZeroIndex]];
+        nonZeroIndex++
+    }
+    return nums;
+}
 
