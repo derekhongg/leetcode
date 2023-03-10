@@ -29,3 +29,61 @@ var twoSum = function(nums, target) {
 let nums1 = [1,2,3,4,6,8];
 
 console.log(twoSum(nums1, 94));
+
+/* Palindrome Number
+
+- Only for positive numbers
+- Break down nums
+
+*/
+
+var isPalindrome = function(x) {
+    if(x < 0) {
+        return false;
+    }
+
+    let temp = x;
+    let reversedNum = 0;
+
+    while(temp > 0) {
+        let digit = temp%10;
+        reversedNum = (reversedNum * 10) + digit;
+        temp = Math.floor(temp/10);
+    }
+
+    return reversedNum === x;
+}
+
+/* Roman to Int
+
+- Ensure only valid characters are involved
+
+*/
+
+var RomanToInt = function(s) {
+    let numsMap = {
+        "I" : 1,
+        "V" : 5,
+        "X" : 10,
+        "L" : 50,
+        "C" : 100,
+        "D" : 500,
+        "M" : 1000
+    }
+
+    let result = 0;
+
+    for(let i = 0; i < s.length; i++) {
+        if(!numsMap[s[i]]) {
+            return "Please Enter a Valid Input."
+        }
+        if(numsMap[s[i]] < numsMap[s[i+1]]) {
+            result -= numsMap[s[i]];
+        } else {
+            result += numsMap[s[i]];
+        }
+    }
+    return result;
+}
+
+console.log(RomanToInt("IV"))
