@@ -32,3 +32,9 @@ var moveZeroes = function(nums) {
     }
     return nums;
 }
+
+/* Remove Element
+
+- 
+
+*/
